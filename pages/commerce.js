@@ -3,7 +3,7 @@ import styles from "../styles/Home.module.css";
 import ErrorPage from "./error-page";
 
 export default function Discovery() {
-  let [searchMovies, setSearchMovies] = useState([]);
+  let [searchMovies, setSearchMovies] = useState("");
   let [isError, setError] = useState(false);
 
   let urlString = `https://leposticheoms.layer.core-hlg.dcg.com.br/v1/Inventory/API.svc/web/SearchInventorySKU`;
@@ -14,6 +14,7 @@ export default function Discovery() {
     console.log(url + " o que chamou");
     fetch(url, {
       headers: new Headers({
+        Authorization: process.env.NEXT_PUBLIC_LE_COMMERCE,
         "Content-Type": "application/json",
       }),
       body: JSON.stringify({
@@ -45,7 +46,7 @@ export default function Discovery() {
       </button>
 
       {isError === true ? (
-        <ErrorPage message={`Verifique as Credenciais`}></ErrorPage>
+        <ErrorPage message={`Verificar o console`}></ErrorPage>
       ) : (
         <div className={styles.grid}>
           <span>Média: {searchMovies}</span>

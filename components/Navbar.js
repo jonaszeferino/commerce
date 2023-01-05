@@ -5,7 +5,7 @@ export default function navbar() {
   return (
     <ul className={styles.navbar}>
       <li>
-        <Link href="/commerce">
+        <Link href="/">
           <a>Home</a>
         </Link>
       </li>

@@ -1,9 +1,9 @@
 import Link from "next/link";
-import Head from "next/head";
+
 export default function Home() {
   return (
     <div>
-      <h1>Player Reviews</h1>
+      <h1>Oms Commerce Tools</h1>
       <br />
       <Link href="/commerce">
         <a>Estoque Commerce</a>
