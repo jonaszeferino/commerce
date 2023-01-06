@@ -10,11 +10,12 @@ export default function Reservations() {
   let [isError, setError] = useState(false);
 
   const apiCall = (event) => {
-    const url = `https://homolog.omniplat.io/v1/clients/${reservationUser}/reservations/unfinished`;
+    let url = `https://homolog.omniplat.io/v1/clients/${reservationUser}/reservations/unfinished`;
+    let urlLebes = `https://homolog-hub.omniplat.io/v1/clients/${reservationUser}/reservations/unfinished`;
 
     let authorization = "Lojista Não encontrado!";
     if (reservationUser == "lebes") {
-      authorization = process.env.NEXT_PUBLIC_LEBES_OMS;
+      (authorization = process.env.NEXT_PUBLIC_LEBES_OMS), (url = urlLebes);
     } else {
       authorization = process.env.NEXT_PUBLIC_LE_OMS;
     }

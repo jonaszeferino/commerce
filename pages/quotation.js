@@ -19,7 +19,7 @@ export default function Quotation() {
 
   const apiCall = (event) => {
     let url = `https://homolog.omniplat.io/v1/clients/${quotationUser}/channels/site/freights`;
-    const urlLebes = `https://homolog-hub.omniplat.io/v1/clients/${quotationUser}/channels/site/freights`;
+    let urlLebes = `https://homolog-hub.omniplat.io/v1/clients/${quotationUser}/channels/site/freights`;
 
     let authorization = "Lojista Não encontrado!";
     if (quotationUser == "lebes") {
@@ -42,7 +42,7 @@ export default function Quotation() {
         groups: {
           group1: {
             items: {
-              sku: {
+              [sku]: {
                 sku: sku,
                 quantity: 1,
                 price: 99.99,
