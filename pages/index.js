@@ -12,6 +12,10 @@ export default function Home() {
       <Link href="/oms">
         <a>Reservas OMS</a>
       </Link>
+      <br />
+      <Link href="/quotation">
+        <a>Cotação OMS</a>
+      </Link>
     </div>
   );
 }

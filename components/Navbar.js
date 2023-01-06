@@ -20,6 +20,11 @@ export default function navbar() {
           <a>Estoque Commerce</a>
         </Link>
       </li>
+      <li>
+        <Link href="/quotation">
+          <a>Cotação</a>
+        </Link>
+      </li>
     </ul>
   );
 }
