@@ -12,10 +12,18 @@ export default function Reservations() {
   const apiCall = (event) => {
     const url = `https://homolog.omniplat.io/v1/clients/${reservationUser}/reservations/unfinished`;
 
+    let authorization = "Lojista Não encontrado!";
+    if (reservationUser == "lebes") {
+      authorization = process.env.NEXT_PUBLIC_LEBES_OMS;
+    } else {
+      authorization = process.env.NEXT_PUBLIC_LE_OMS;
+    }
+    console.log(reservationUser + " <-1 user");
+
     fetch(url, {
       headers: new Headers({
-        //Authorization: `${reservationBasic}`,
-        Authorization: process.env.NEXT_PUBLIC_LE_OMS,
+        Authorization: `${authorization}`,
+        // Authorization: process.env.NEXT_PUBLIC_LE_OMS,
         "Content-Type": "application/json",
       }),
     })
@@ -46,7 +54,7 @@ export default function Reservations() {
             onChange={(event) => setReservationUser(event.target.value)}
           ></input>
         </label>
-        <label type="text">
+        {/* <label type="text">
           Basic:
           <input
             className={styles.card}
@@ -55,7 +63,7 @@ export default function Reservations() {
             value={reservationBasic}
             onChange={(event) => setReservationBasic(event.target.value)}
           ></input>
-        </label>
+        </label> */}
         <button className={styles.card} onClick={apiCall}>
           Verificar
         </button>
