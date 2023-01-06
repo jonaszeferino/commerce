@@ -1,10 +1,10 @@
 .footer {
   display: flex;
-  background-color: #190945;
+  background-color: #611ba7;
   background-size: cover;
   background-position: center;
   color: rgb(255, 255, 255);
-  height: 160px;
+  height: 100px;
   justify-content: center;
   align-items: center;
 }
